@@ -110,7 +110,7 @@ class Train_model:
         self.G.eval()
 
         fake_images = self.G(z)
-        d_out = D(fake_images).view(-1).to("cpu").detach().numpy()
+        d_out = self.D(fake_images).view(-1).to("cpu").detach().numpy()
         fake_images = fake_images.to("cpu").detach()
         return fake_images, d_out
 
