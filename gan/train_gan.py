@@ -1,5 +1,6 @@
-if __name__ == "__main__":
-    from tqdm import tqdm
+from tqdm.notebook import tqdm
+# jupyter notebookで動かさない場合は下の方を有効にする
+# from tqdm import tqdm
 import torch
 import torch.nn as nn
 
