@@ -1,10 +1,12 @@
-from tqdm import tqdm
+if 'get_ipython' in globals():
+    from tqdm.notebook import tqdm
+else:
+    from tqdm import tqdm
 import torch
 import torch.nn as nn
 
 from dataloader import GANImageDataset, ImageTransform, show_images
 from model import Generator, Discriminator
-
 
 class Train_model:
     def __init__(self, device):
