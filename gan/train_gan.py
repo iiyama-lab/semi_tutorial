@@ -1,6 +1,4 @@
-if 'get_ipython' in globals():
-    from tqdm.notebook import tqdm
-else:
+if __name__ == "__main__":
     from tqdm import tqdm
 import torch
 import torch.nn as nn
