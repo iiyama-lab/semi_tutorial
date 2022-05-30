@@ -66,13 +66,13 @@ class Train_model:
             return 0
         self.D.zero_grad()
 
-        images = images.to(device)
-        label_real = torch.full((batch_size,), 0.0).to(device)
-        label_fake = torch.full((batch_size,), 1.0).to(device)
+        images = images.to(self.device)
+        label_real = torch.full((batch_size,), 0.0).to(self.device)
+        label_fake = torch.full((batch_size,), 1.0).to(self.device)
 
         d_out_real = self.D(images)
 
-        input_z = torch.randn(batch_size, self.z_dim, 1, 1).to(device)
+        input_z = torch.randn(batch_size, self.z_dim, 1, 1).to(self.device)
         fake_images = self.G(input_z)
         d_out_fake = self.D(fake_images)
 
