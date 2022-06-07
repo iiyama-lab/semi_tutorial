@@ -1,6 +1,6 @@
-from tqdm.notebook import tqdm
+#from tqdm.notebook import tqdm
 # jupyter notebookで動かさない場合は下の方を有効にする
-# from tqdm import tqdm
+from tqdm import tqdm
 import torch
 import torch.nn as nn
 
@@ -131,4 +131,4 @@ if __name__ == "__main__":
 
     trainer = Train_model(device)
     trainer.initialize(G, D, z_dim, setting)
-    trainer.train(dataloader, num_epochs=10)
+    trainer.train(dataloader, num_epochs=200)
